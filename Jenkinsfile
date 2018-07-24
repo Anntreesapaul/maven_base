@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('test') {
           steps {
-            sh 'mvn -Dtest=TestApp test'
+            sh 'mvn --settings settings.xml package'
           }
         }
         stage('deploy') {
